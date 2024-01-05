@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdelaideAirportWeather", "AdelaideAirportWeather\AdelaideAirportWeather.csproj", "{0CD5ADBD-A1BB-4097-A5D8-F2FFEC30A3ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdelaideAirportWeather", "AdelaideAirportWeather\AdelaideAirportWeather.csproj", "{0CD5ADBD-A1BB-4097-A5D8-F2FFEC30A3ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonHelper", "CommonHelper\CommonHelper.csproj", "{7AA48AE1-BB9F-4C51-AEAE-9DE26AE4CD18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdelaideWeatherAPI", "AdelaideWeatherAPI\AdelaideWeatherAPI.csproj", "{EB8096A1-EAD5-439E-982F-B16B7531C3E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{0CD5ADBD-A1BB-4097-A5D8-F2FFEC30A3ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CD5ADBD-A1BB-4097-A5D8-F2FFEC30A3ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CD5ADBD-A1BB-4097-A5D8-F2FFEC30A3ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AA48AE1-BB9F-4C51-AEAE-9DE26AE4CD18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AA48AE1-BB9F-4C51-AEAE-9DE26AE4CD18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AA48AE1-BB9F-4C51-AEAE-9DE26AE4CD18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AA48AE1-BB9F-4C51-AEAE-9DE26AE4CD18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB8096A1-EAD5-439E-982F-B16B7531C3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB8096A1-EAD5-439E-982F-B16B7531C3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB8096A1-EAD5-439E-982F-B16B7531C3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB8096A1-EAD5-439E-982F-B16B7531C3E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
