@@ -31,17 +31,22 @@ namespace CommonHelper
             {
                 URL = "http://www.bom.gov.au/fwo/IDS60901/IDS60901." +WMO+".json";
 
+#pragma warning disable IDE0063 // Use simple 'using' statement
                 using (WebClient client = new WebClient())
                 {
                     var response = client.DownloadString(URL);
                     if (response != null)
                     {
+#pragma warning disable CS8601 // Possible null reference assignment.
                         ResponseData = JsonConvert.DeserializeObject<WeatherData>(response);
+#pragma warning restore CS8601 // Possible null reference assignment.
                     }
                 }
+#pragma warning restore IDE0063 // Use simple 'using' statement
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                throw new Exception("Error happened while processing the request");
             }
         }
 

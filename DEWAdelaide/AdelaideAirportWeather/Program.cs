@@ -4,9 +4,9 @@ namespace AdealaideAirportArea
 {
     public class Program
     {
-        public double AverageTemperature()
+        public string AverageTemperature()
         {
-            double avgtemp = 0;
+            string avgtemp = "";
             string WMO = "94672";
             try
             {
@@ -25,15 +25,19 @@ namespace AdealaideAirportArea
                         if (dataObservation != null && dataObservation.Count > 0)
                         {
                             double sum = dataObservation.Sum(reading => reading.air_temp);
-                            avgtemp = sum / dataObservation.Count;
-                            //or
-                            //avgtemp = dataObservation.Any() ? dataObservation.Average(y => y.air_temp) : 0;
+                            avgtemp = Convert.ToString(sum / dataObservation.Count);
                         }
+                    }
+                    else
+                    {
+                        avgtemp = "Recieved empty response from weather station";
                     }
                 }
             }
             catch
-            { }
+            {
+                throw new Exception("Recieved error response from the weather station");
+            }
             return avgtemp;
         }
         protected DateTime DateFormat(string dateString)
