@@ -2,7 +2,7 @@
 
 namespace AdealaideAirportArea
 {
-    public class Program
+    public class AdelaideTemperature
     {
         public string AverageTemperature()
         {
@@ -55,8 +55,8 @@ namespace AdealaideAirportArea
                
         static void Main(string[] args)
         {
-            var temperature = new Program().AverageTemperature();
-            Console.WriteLine("Adelaide airport average temperature for the previous 72 hours "+temperature);
+            var temperature = new AdelaideTemperature().AverageTemperature();
+            Console.WriteLine("Adelaide airport average temperature for the previous 72 hours: "+temperature);
         }
     }
 }
