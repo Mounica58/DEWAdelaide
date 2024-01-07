@@ -34,15 +34,10 @@ namespace AdelaideWeatherAPI.Controllers
             }
             return weatherData;
         }
-        public enum StringOptions
-        {
-            temp,
-            apptemp,
-            dewpoint
-        }
+       
         [HttpGet("GetSpecificStateWeather")]
         public string GetSpecificWeatherData(string WMO, [SwaggerParameter("Dropdown parameter", Required = true)]
-            [EnumDataType(typeof(StringOptions), ErrorMessage = "Invalid option.")] string stringValue)
+            [EnumDataType(typeof(DataOptions), ErrorMessage = "Invalid option.")] string specificData)
         {
             WeatherData weatherData = new WeatherData();
             JsonCaller caller = new JsonCaller("", "GET", WMO);
@@ -51,9 +46,9 @@ namespace AdelaideWeatherAPI.Controllers
             {
                 weatherData = (WeatherData)caller.ResponseData;
                 var filteredObservations = weatherData?.observations?.data?.FirstOrDefault();
-                if (filteredObservations != null && !string.IsNullOrEmpty(stringValue))
+                if (filteredObservations != null && !string.IsNullOrEmpty(specificData))
                 {
-                    switch (stringValue)
+                    switch (specificData)
                     {
                         case "temp":
                             return  Convert.ToString(filteredObservations.air_temp);
