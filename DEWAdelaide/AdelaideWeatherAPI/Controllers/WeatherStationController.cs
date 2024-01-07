@@ -30,7 +30,7 @@ namespace AdelaideWeatherAPI.Controllers
             }
             else
             {
-                _logger.LogError("Recieved empty response from the weather station");
+                _logger.LogError("Received empty response from the weather station");
             }
             return weatherData;
         }
@@ -45,30 +45,30 @@ namespace AdelaideWeatherAPI.Controllers
             if (caller != null && caller.ResponseData != null)
             {
                 weatherData = (WeatherData)caller.ResponseData;
-                var filteredObservations = weatherData?.observations?.data?.FirstOrDefault();
-                if (filteredObservations != null && !string.IsNullOrEmpty(specificData))
+                var dataObservations = weatherData?.observations?.data?.FirstOrDefault();
+                if (dataObservations != null && !string.IsNullOrEmpty(specificData))
                 {
                     switch (specificData)
                     {
                         case "temp":
-                            return  Convert.ToString(filteredObservations.air_temp);
+                            return  Convert.ToString(dataObservations.air_temp);
                         case "apptemp":
-                            return Convert.ToString(filteredObservations.apparent_t);
+                            return Convert.ToString(dataObservations.apparent_t);
                         case "dewpoint":
-                            return Convert.ToString(filteredObservations.dewpt);
+                            return Convert.ToString(dataObservations.dewpt);
                         default:
                             return string.Empty;
                     }
                 }
                 else
                 {
-                    return "Recieved empty response from the weather station";
+                    return "Received empty response from the weather station";
                 }
             }
             else
             {
-                _logger.LogError("Recieved empty response from the weather station");
-                return "Recieved empty response from the weather station";
+                _logger.LogError("Received empty response from the weather station");
+                return "Received empty response from the weather station";
             }
         }
     }
